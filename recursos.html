@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - Consultoría en Construcción Sostenible</title>
+    <title>Tienda Virtual - Materiales Sostenible</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,7 +12,7 @@
         }
         header {
             background-color: rgba(44, 62, 80, 0.9);
-            color: white;
+            color: rgb(255, 255, 255);
             padding: 10px 20px;
             display: flex;
             align-items: center;
@@ -45,14 +45,12 @@
             border-bottom: 2px solid #4caf50;
         }
         .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
             width: 80%;
             margin: auto;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9);
-            color: black;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
         }
         .hero {
             position: relative;
@@ -71,48 +69,6 @@
         .hero p {
             font-size: 24px;
         }
-        .contact-section {
-            width: 80%;
-            margin: 20px auto;
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        .contact-section h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .contact-form {
-            display: flex;
-            justify-content: space-between;
-        }
-        .contact-form div {
-            width: 48%;
-        }
-        .contact-form label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .contact-form button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background: green;
-            color: white;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
         .bubble {
             position: fixed;
             top: 50%;
@@ -128,12 +84,6 @@
         }
         .bubble h2 {
             margin-top: 0;
-        }
-        .close-btn {
-            cursor: pointer;
-            color: red;
-            font-weight: bold;
-            float: right;
         }
         footer {
             background-color: rgba(44, 62, 80, 0.9);
@@ -163,74 +113,56 @@
             width: 100%;
             border-radius: 10px;
         }
-        .cart-icon {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        .cart-count {
-            background: red;
-            color: white;
-            border-radius: 50%;
-            padding: 5px 10px;
-            font-size: 14px;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-        .cart-container {
-            position: fixed;
-            top: 50px;
-            right: 20px;
-            width: 300px;
-            background: white;
-            border: 1px solid #ccc;
-            padding: 10px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-            display: none;
-        }
-        .cart-container ul {
-            list-style: none;
-            padding: 0;
-        }
-        .cart-container li {
-            padding: 5px 0;
-            border-bottom: 1px solid #ddd;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-        }
-        .store {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: space-between;
-        }
         .item {
-            background: white;
+            border: 1px solid #ddd;
             padding: 15px;
-            width: 30%;
-            border-radius: 5px;
-            box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+            border-radius: 10px;
             text-align: center;
-            cursor: pointer;
+            background: #f9f9f9;
         }
         .item img {
             width: 100%;
-            height: auto;
-            border-radius: 5px;
+            border-radius: 10px;
+            cursor: pointer;
         }
         .description {
-            display: none;
-            background: white;
+            background: lightblue;
             padding: 10px;
             border-radius: 5px;
-            box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
             margin-top: 10px;
+            display: none;
+        }
+        .quantity {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        .quantity input {
+            width: 40px;
+            text-align: center;
+        }
+        .cart-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+        }
+        .cart-container {
+            display: none;
+            position: fixed;
+            bottom: 60px;
+            right: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            width: 250px;
         }
         button {
             background: green;
@@ -240,48 +172,52 @@
             border-radius: 5px;
             cursor: pointer;
         }
+        .container2 {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: black;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
     </style>
 <script>
-    let cart = {};
-    function addToCart(item, price) {
-        if (cart[item]) {
-            cart[item].count++;
-        } else {
-            cart[item] = { price: price, count: 1 };
-        }
-        updateCartView();
-    }
+    let cart = [];
+
     function toggleCart() {
-        const cartContainer = document.getElementById('cart-container');
-        cartContainer.style.display = cartContainer.style.display === 'block' ? 'none' : 'block';
+        let cartContainer = document.getElementById('cart-container');
+        cartContainer.style.display = (cartContainer.style.display === 'block') ? 'none' : 'block';
     }
-    function updateCartView() {
-        const cartList = document.getElementById('cart-list');
-        cartList.innerHTML = '';
+
+    function addToCart(product, price) {
+        let quantityInput = document.getElementById(`quantity-${product.replace(/\s+/g, '-')}`);
+        let quantity = parseInt(quantityInput.value);
+        let item = cart.find(p => p.name === product);
+        if (item) {
+            item.quantity += quantity;
+        } else {
+            cart.push({ name: product, price: price, quantity: quantity });
+        }
+        updateCart();
+    }
+
+    function updateCart() {
+        let cartList = document.getElementById('cart-list');
+        let cartCount = document.getElementById('cart-count');
+        let totalPrice = document.getElementById('total-price');
         let total = 0;
-        let count = 0;
-        for (let item in cart) {
+        cartList.innerHTML = '';
+        cart.forEach(item => {
             let li = document.createElement('li');
-            let subtotal = cart[item].price * cart[item].count;
-            li.innerText = `${item} x${cart[item].count} - S/${subtotal}`;
+            li.textContent = `${item.name} x${item.quantity} - S/${item.price * item.quantity}`;
             cartList.appendChild(li);
-            total += subtotal;
-            count += cart[item].count;
-        }
-        document.getElementById('cart-count').innerText = count;
-        let totalLi = document.createElement('li');
-        totalLi.innerHTML = `<strong>Total: S/${total}</strong>`;
-        cartList.appendChild(totalLi);
+            total += item.price * item.quantity;
+        });
+        cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+        totalPrice.textContent = `Total: S/${total}`;
     }
-    function showDescription(id) {
-        document.querySelectorAll('.description').forEach(desc => desc.style.display = 'none');
-        document.getElementById(id).style.display = 'block';
-    }
-    document.addEventListener('click', function(event) {
-        if (!event.target.closest('.item')) {
-            document.querySelectorAll('.description').forEach(desc => desc.style.display = 'none');
-        }
-    });
 </script>
 </head>
 <body>
@@ -293,94 +229,64 @@
         <nav class="nav-links">
             <a href="index.html">Inicio</a>
             <a href="quienes-somos.html">Quienes Somos</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#recursos">Recursos</a>
-            <a href="contacto.html" class="active">Contacto</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="recursos.html"class="active">Recursos</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="equipo.html">Nuestro Equipo</a>
         </nav>
         
     </header>
     <div class="hero">
         <div>
-            <p>SIMULACION</p>
+            <p>COTIZACION</p>
             <h1>TIENDA VIRTUAL</h1>
         </div>
     </div>
+    <div class="cart-icon" onclick="toggleCart()">🛒<span id="cart-count">0</span></div>
+    <div id="cart-container" class="cart-container">
+        <h3>Carrito de Compras</h3>
+        <ul id="cart-list"></ul>
+        <p id="total-price">Total: S/0</p>
+    </div>
     <div class="container">
-        <div class="cart-icon" onclick="toggleCart()">
-            🛒<span id="cart-count">0</span>
-        </div>
-        <div id="cart-container" class="cart-container">
-            <h3>Carrito de Compras</h3>
-            <ul id="cart-list"></ul>
-        </div>
-        <div class="container">
-            <h2>Tienda Virtual</h2>
-            <div class="store">
-                <div class="item" onclick="showDescription('desc-bambu')">
-                    <img src="imagenes/bambu.jpg" alt="Bambú">
-                    <h3>Bambú</h3>
-                    <p><strong>Precio: S/10 por unidad</strong></p>
-                    <button onclick="addToCart('Bambú', 10)">Añadir al Carrito</button>
-                    <div id="desc-bambu" class="description">Material versátil y sostenible.</div>
+        <script>
+            let products = [
+                { name: "Bambú", price: 10, description: "Material versátil y sostenible.", img: "Imagenes/bambu.png" },
+                { name: "Concreto Reciclado", price: 15, description: "Reduce residuos y minimiza el impacto ambiental.", img: "Imagenes/concreto.png" },
+                { name: "Ladrillos de Adobe", price: 8, description: "Biodegradables y con gran eficiencia energética.", img: "Imagenes/adobe.png" },
+                { name: "Vidrio Reciclado", price: 12, description: "Utilizable en ventanas y aislamiento.", img: "Imagenes/vidrio.png" },
+                { name: "Acero Reciclado", price: 20, description: "Mantiene su resistencia y reduce la huella de carbono.", img: "Imagenes/acero.png" },
+                { name: "Plástico Reciclado", price: 5, description: "Duradero y resistente a la intemperie.", img: "Imagenes/plastico.png" },
+                { name: "Madera Reutilizada", price: 18, description: "Opción estética y ecológica para proyectos.", img: "Imagenes/madera.png" },
+                { name: "Paneles Solares", price: 500, description: "Fuente de energía limpia y renovable.", img: "Imagenes/panel.png" },
+                { name: "Pinturas y Acabados Ecológicos", price: 30, description: "Libres de compuestos orgánicos volátiles.", img: "Imagenes/pintura.png" },
+                { name: "Aislamiento de Lana de Oveja", price: 40, description: "Aislante natural, eficiente y biodegradable.", img: "Imagenes/oveja.png" }
+            ];
+            
+            document.write(products.map(p => `
+                <div class="item">
+                    <img src="${p.img}" alt="${p.name}" onclick="toggleDescription('desc-${p.name.replace(/\s+/g, '-')}')">
+                    <h3 onclick="toggleDescription('desc-${p.name.replace(/\s+/g, '-')}')">${p.name}</h3>
+                    <p><strong>Precio: S/${p.price} por unidad</strong></p>
+                    <div class="description" id="desc-${p.name.replace(/\s+/g, '-')}">${p.description}</div>
+                    <div class="quantity">
+                        <button onclick="document.getElementById('quantity-${p.name.replace(/\s+/g, '-')}').stepDown()">-</button>
+                        <input type="number" id="quantity-${p.name.replace(/\s+/g, '-')}" value="1" min="1">
+                        <button onclick="document.getElementById('quantity-${p.name.replace(/\s+/g, '-')}').stepUp()">+</button>
+                    </div>
+                    <button onclick="addToCart('${p.name}', ${p.price})">Añadir al Carrito</button>
                 </div>
-                <div class="item" onclick="showDescription('desc-concreto')">
-                    <img src="Imagenes/concreto.png" alt="Concreto Reciclado">
-                    <h3>Concreto Reciclado</h3>
-                    <p><strong>Precio: S/15 por unidad</strong></p>
-                    <button onclick="addToCart('Concreto Reciclado', 15)">Añadir al Carrito</button>
-                    <div id="desc-concreto" class="description">Reduce residuos de construcción.</div>
-                </div>
-                <div class="item" onclick="showDescription('desc-bambu')">
-                    <img src="imagenes/bambu.jpg" alt="Bambú">
-                    <h3>Bambú</h3>
-                    <p><strong>Precio: S/10 por unidad</strong></p>
-                    <button onclick="addToCart('Bambú', 10)">Añadir al Carrito</button>
-                    <div id="desc-bambu" class="description">Material versátil y sostenible.</div>
-                </div>
-                <div class="item" onclick="showDescription('desc-bambu')">
-                    <img src="imagenes/bambu.jpg" alt="Bambú">
-                    <h3>Bambú</h3>
-                    <p><strong>Precio: S/10 por unidad</strong></p>
-                    <button onclick="addToCart('Bambú', 10)">Añadir al Carrito</button>
-                    <div id="desc-bambu" class="description">Material versátil y sostenible.</div>
-                </div>
-                <div class="item" onclick="showDescription('desc-bambu')">
-                    <img src="imagenes/bambu.jpg" alt="Bambú">
-                    <h3>Bambú</h3>
-                    <p><strong>Precio: S/10 por unidad</strong></p>
-                    <button onclick="addToCart('Bambú', 10)">Añadir al Carrito</button>
-                    <div id="desc-bambu" class="description">Material versátil y sostenible.</div>
-                </div>
-                <div class="item" onclick="showDescription('desc-bambu')">
-                    <img src="imagenes/bambu.jpg" alt="Bambú">
-                    <h3>Bambú</h3>
-                    <p><strong>Precio: S/10 por unidad</strong></p>
-                    <button onclick="addToCart('Bambú', 10)">Añadir al Carrito</button>
-                    <div id="desc-bambu" class="description">Material versátil y sostenible.</div>
-                </div>
-                <div class="item" onclick="showDescription('desc-bambu')">
-                    <img src="imagenes/bambu.jpg" alt="Bambú">
-                    <h3>Bambú</h3>
-                    <p><strong>Precio: S/10 por unidad</strong></p>
-                    <button onclick="addToCart('Bambú', 10)">Añadir al Carrito</button>
-                    <div id="desc-bambu" class="description">Material versátil y sostenible.</div>
-                </div>
-                <div class="item" onclick="showDescription('desc-bambu')">
-                    <img src="imagenes/bambu.jpg" alt="Bambú">
-                    <h3>Bambú</h3>
-                    <p><strong>Precio: S/10 por unidad</strong></p>
-                    <button onclick="addToCart('Bambú', 10)">Añadir al Carrito</button>
-                    <div id="desc-bambu" class="description">Material versátil y sostenible.</div>
-                </div>
-                <div class="item" onclick="showDescription('desc-bambu')">
-                    <img src="imagenes/bambu.jpg" alt="Bambú">
-                    <h3>Bambú</h3>
-                    <p><strong>Precio: S/10 por unidad</strong></p>
-                    <button onclick="addToCart('Bambú', 10)">Añadir al Carrito</button>
-                    <div id="desc-bambu" class="description">Material versátil y sostenible.</div>
-                </div>
-            </div>
-        </div>
+            `).join(''));
+        </script>
+    </div>
+    <div class="container2" id="recursos">
+        <h2>Recursos y Guías</h2>
+        <p>Descarga nuestras guías gratuitas sobre construcción sostenible:</p>
+        <ul>
+            <li><a href="https://www.minambiente.gov.co/wp-content/uploads/2023/06/Guia-de-materiales-para-la-construccion-sostenible.pdf">Guía de Materiales Ecológicos</a></li>
+            <li><a href="https://accioncontraelhambre.org/sites/default/files/2024-08/Plan%20de%20Reducci%C3%B3n%20Huella%20de%20carbono%20-%20ES.pdf">Estrategias para Reducir la Huella de Carbono</a></li>
+            <li><a href="https://www.construccion2030.es/wp-content/uploads/2020/02/GUIA-CERTIFICACIONES-SOSTENIBILIDAD.pdf">Normativas y Certificaciones en Construcción Sostenible</a></li>
+        </ul>
     </div>
     <footer>
         <div class="footer-content">

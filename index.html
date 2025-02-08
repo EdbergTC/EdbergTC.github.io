@@ -8,8 +8,8 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to right, #2c3e50, #4ca1af);
-            color: white;
+            background: linear-gradient(to right, #f1f3f4, #4ca1af);
+            color: rgb(15, 15, 15);
         }
         header {
             background-color: rgba(44, 62, 80, 0.9);
@@ -46,14 +46,10 @@
             border-bottom: 2px solid #4caf50;
         }
         .container {
-            width: 80%;
+            width: 90%;
+            max-width: 1200px;
             margin: auto;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9);
-            color: black;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
+            padding: 40px 20px;
         }
         .carousel {
             position: relative;
@@ -171,13 +167,12 @@
             border-radius: 10px;
         }
         .section {
-            width: 80%;
-            margin: 40px auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            position: relative;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            text-align: center;
         }
         .section img {
             width: 250px;
@@ -187,13 +182,6 @@
         }
         .section:nth-child(odd) {
             flex-direction: row-reverse;
-        }
-        .container {
-            flex: 1;
-            padding: 30px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
         h2 {
             text-align: center;
@@ -205,6 +193,20 @@
             line-height: 1.8;
             font-size: 18px;
             text-align: justify;
+        }.testimonios {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .testimonio {
+            flex: 1;
+            text-align: center;
+        }
+        .testimonio img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
         }
     </style>
 <script>
@@ -253,6 +255,7 @@
             <a href="servicios.html">Servicios</a>
             <a href="recursos.html">Recursos</a>
             <a href="contacto.html">Contacto</a>
+            <a href="equipo.html">Nuestro Equipo</a>
         </nav>
     </header>
         <div class="carousel">
@@ -279,24 +282,33 @@
             
             <button class="arrow next">&#10095;</button>
         </div>
-    <div class="container" id="servicios">
-        <h2>Nuestros Servicios</h2>
-        <ul>
-            <li>Asesoría en construcción sostenible</li>
-            <li>Selección de materiales ecológicos</li>
-            <li>Simulación de proyectos sostenibles</li>
-            <li>Capacitación en construcción ecológica</li>
-        </ul>
-    </div>
-    <div class="container" id="recursos">
-        <h2>Recursos y Guías</h2>
-        <p>Descarga nuestras guías gratuitas sobre construcción sostenible:</p>
-        <ul>
-            <li><a href="https://www.minambiente.gov.co/wp-content/uploads/2023/06/Guia-de-materiales-para-la-construccion-sostenible.pdf">Guía de Materiales Ecológicos</a></li>
-            <li><a href="https://accioncontraelhambre.org/sites/default/files/2024-08/Plan%20de%20Reducci%C3%B3n%20Huella%20de%20carbono%20-%20ES.pdf">Estrategias para Reducir la Huella de Carbono</a></li>
-            <li><a href="https://www.construccion2030.es/wp-content/uploads/2020/02/GUIA-CERTIFICACIONES-SOSTENIBILIDAD.pdf">Normativas y Certificaciones en Construcción Sostenible</a></li>
-        </ul>
-    </div>
+        <div class="container">
+            <div class="section">
+                <h2>Testimonios</h2>
+                <div class="testimonios">
+                    <div class="testimonio">
+                        <img src="imagenes/test 01.jpg" alt="Ana Mendoza">
+                        <p><strong>Ana Mendoza</strong></p>
+                        <p>"Gracias a la consultoría, logramos reducir el consumo energético en un 30%. ¡Totalmente recomendados!"</p>
+                    </div>
+                    <div class="testimonio">
+                        <img src="imagenes/test 02.jpg" alt="Carlos Rodríguez">
+                        <p><strong>Carlos Rodríguez</strong></p>
+                        <p>"La implementación de materiales reciclados hizo nuestra construcción más sostenible y económica."</p>
+                    </div>
+                    <div class="testimonio">
+                        <img src="imagenes/test 03.jpeg" alt="Luisa Fernández">
+                        <p><strong>Luisa Fernández</strong></p>
+                        <p>"Un equipo comprometido con la sostenibilidad y la eficiencia energética en cada proyecto."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <h2>Ubicación</h2>
+                <p>Visítanos en nuestras oficinas para conocer más sobre nuestros proyectos.</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.947415871187!2d-77.1762745260519!3d-9.591569773993942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91b60cfb614f4383%3A0x12e6b564c88a7d35!2sJr.%20Las%20Flores%2C%20Chav%C3%ADn%20de%20Huantar%2C%20Per%C3%BA!5e0!3m2!1ses!2spe!4v1700000000000!5m2!1ses!2spe" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
     <footer>
         <div class="footer-content">
             <div class="footer-left">

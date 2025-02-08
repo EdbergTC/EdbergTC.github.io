@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Consultoría en Construcción Sostenible</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: rgba(44, 62, 80, 0.9);
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .header-left img {
+            max-width: 50px;
+            margin-bottom: 5px;
+        }
+        .header-left h1 {
+            font-size: 16px;
+            text-align: center;
+            line-height: 1.2;
+        }
+        .nav-links {
+            display: flex;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+        .nav-links a.active {
+            border-bottom: 2px solid #4caf50;
+        }
+        .container, .rental-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .hero {
+            position: relative;
+            height: 400px;
+            background: url('Imagenes/servicios.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(14, 13, 13);
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 24px;
+        }
+        .bubble {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.95);
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 1000;
+        }
+        .bubble h2 {
+            margin-top: 0;
+        }
+        .close-btn {
+            cursor: pointer;
+            color: red;
+            font-weight: bold;
+            float: right;
+        }
+        footer {
+            background-color: rgba(44, 62, 80, 0.9);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .footer-left {
+            display: flex;
+            align-items: center;
+        }
+        .footer-left img {
+            max-width: 100px;
+            margin: 10px;
+        }
+        .footer-right {
+            text-align: right;
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 22px;
+            margin: 40px 0 20px;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        .service {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .service:hover {
+            transform: translateY(-5px);
+        }
+        .service img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .service h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .service p, .service ul {
+            font-size: 16px;
+            text-align: left;
+        }
+        .service ul {
+            list-style: none;
+            padding: 0;
+        }
+        .service ul li {
+            background: #ecf0f1;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        .carousel-text a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgb(34, 49, 132);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .carousel-text.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img class="logo" src="Imagenes/logo.png" alt="logo">
+            <h1>CONSULTORÍA EN<br>CONSTRUCCIÓN SOSTENIBLE</h1>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="quienes-somos.html">Quienes Somos</a>
+            <a href="servicios.html" class="active">Servicios</a>
+            <a href="recursos.html">Recursos</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="equipo.html">Nuestro Equipo</a>
+        </nav>
+    </header>
+    <div class="hero">
+        <div class="carousel-text active">
+            <h1>SERVICIOS MULTIPLES</h1>
+            <br>
+            <a href="contacto.html">ESCRIBENOS</a>
+        </div>
+    </div>
+    <h2 class="section-title">Servicios Generales</h2>
+    <div class="container">
+        <div class="service">
+            <img src="Imagenes/asesoria.jpg" alt="Asesoría">
+            <h2>Asesoría en Construcción Sostenible</h2>
+            <p>Brindamos consultoría especializada en proyectos de construcción sostenible, optimizando el uso de recursos y promoviendo edificaciones ecológicas.</p>
+        </div>
+        <div class="service">
+            <img src="Imagenes/impacto.jpg" alt="Impacto Ambiental">
+            <h2>Evaluación de Impacto Ambiental</h2>
+            <p>Realizamos estudios de impacto ambiental para garantizar que los proyectos cumplan con normativas y estándares ecológicos.</p>
+        </div>
+        <div class="service">
+            <img src="Imagenes/materiales.jpeg" alt="Materiales Reciclados">
+            <h2>Gestión de Materiales Reciclados</h2>
+            <p>Facilitamos el acceso y la gestión de materiales reciclados para la construcción, promoviendo prácticas responsables con el medio ambiente.</p>
+        </div>
+        <div class="service">
+            <img src="Imagenes/capacitacion.jpg" alt="Capacitación">
+            <h2>Capacitación en Construcción Verde</h2>
+            <p>Ofrecemos programas de formación sobre técnicas y normativas de construcción ecológica para profesionales del sector.</p>
+        </div>
+    </div>
+    
+    <h2 class="section-title">Servicios de Alquiler</h2>
+    <div class="rental-container">
+        <div class="service">
+            <img src="imagenes/impresora3d.jpg" alt="Impresora 3D">
+            <h2>Alquiler de Impresora 3D</h2>
+            <p>Ideal para la impresión de modelos de construcción sostenible con materiales ecológicos.</p>
+        </div>
+        <div class="service">
+            <img src="imagenes/dron.jpg" alt="Dron con sensor térmico">
+            <h2>Alquiler de Dron con Sensor Térmico</h2>
+            <p>Para inspecciones detalladas en edificaciones y detección de pérdidas de energía.</p>
+        </div>
+        <div class="service">
+            <img src="imagenes/estacion_medicion.jpg" alt="Estación de Medición Ambiental">
+            <h2>Alquiler de Estación de Medición Ambiental</h2>
+            <p>Permite monitorear la calidad del aire, temperatura y humedad en proyectos de construcción.</p>
+        </div>
+        <div class="service">
+            <img src="imagenes/escritorio.jpg" alt="Escritorio Ergonómico">
+            <h2>Alquiler de Escritorio Ergonómico</h2>
+            <p>Mobiliario diseñado para mejorar la postura y comodidad en el entorno de trabajo.</p>
+        </div>
+        <div class="service">
+            <img src="imagenes/silla.jpg" alt="Silla Ecológica">
+            <h2>Alquiler de Silla Ecológica</h2>
+            <p>Sillas fabricadas con materiales reciclados y diseño ergonómico para mayor comodidad.</p>
+        </div>
+        <div class="service">
+            <img src="imagenes/bim.png" alt="Software BIM">
+            <h2>Alquiler de Software BIM</h2>
+            <p>Optimiza la gestión y modelado de edificaciones sostenibles en todas las fases del proyecto.</p>
+        </div>
+        <div class="service">
+            <img src="imagenes/gestion.png" alt="Software de Gestión de Proyectos">
+            <h2>Alquiler de Software de Gestión de Proyectos</h2>
+            <p>Facilita la planificación, ejecución y seguimiento de proyectos de construcción ecológica.</p>
+        </div>
+        <div class="service">
+            <img src="imagenes/simulador.png" alt="Simulador de Impacto Ambiental">
+            <h2>Alquiler de Simulador de Impacto Ambiental</h2>
+            <p>Permite evaluar el impacto de los proyectos en el medio ambiente antes de su ejecución.</p>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="imagenes/logo.png" alt="Logo de la empresa">
+                <p>Asesoría y soluciones ecológicas para la construcción</p>
+            </div>
+            <div class="footer-right">
+                <p><strong>Dirección:</strong> Jr. Las Flores - Chavin de Huantar</p>
+                <p><strong>Teléfono:</strong> +51 938 761 748</p>
+                <p><strong>Email:</strong> contacto@consultoriasostenible.com</p>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/51938761748" style="color: white;">Enviar mensaje</a></p>
+                <p><strong>Facebook:</strong> <a href="https://web.facebook.com/consultora.rhejem" style="color: white;">Síguenos en Facebook</a></p>
+            </div>
+        </div>
+        <p>&copy; 2024 Consultoría en Construcción Sostenible. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
